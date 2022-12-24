@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# THIS SCRIPT INSTALL ROBLOX AUTOMATICALLY
+# Steps from https://www.youtube.com/watch?v=R3zz2lhig2U&t=275s
+
+# 1. Uncomment the line in /etc/pacman.conf
+#   vim /etc/pacman.conf
+#
+#   [multilib]
+#   Include = /etc/pacman.d/mirrorlist 
+
+# 2. Installing grapejuice-git and wine
+yay -S --noconfirm base-devel wget p7zip wine winetricks wine gnutls lib32-gnutls libpulse lib32-libpulse -y
+
+git clone --depth=1 https://aur.archlinux.org/grapejuice-git.git /tmp/grapejuice-git
+cd /tmp/grapejuice-git
+makepkg -si
+
+# 3. Installing a prebuilt Wine build 
+cd /tmp
+wget https://pastebin.com/raw/5SeVb005 -O install.py
+python3 install.py
+
+# 4. Opening grapejuice and installing roblox
+#   3.1. Open Grapejuice
+#   3.2. Under 'Start' section, click 'Open Roblox Studio.
+#   3.3. The player and studio section should appear. If not, follow the step 3.2 and also do sign in.
+
