@@ -10,7 +10,7 @@
 #   Include = /etc/pacman.d/mirrorlist 
 
 # 2. Installing grapejuice-git and wine
-yay -S --noconfirm base-devel wget p7zip wine winetricks wine gnutls lib32-gnutls libpulse lib32-libpulse -y
+yay -S --noconfirm base-devel wget p7zip wine winetricks wine gnutls lib32-gnutls libpulse lib32-libpulse 
 
 git clone --depth=1 https://aur.archlinux.org/grapejuice-git.git /tmp/grapejuice-git
 cd /tmp/grapejuice-git
